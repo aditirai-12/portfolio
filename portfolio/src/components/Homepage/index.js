@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import './index.scss';
-import pic from './assets/images/profile.JPG';
+import pic from '..assets/images/profile.JPG';
 import { useEffect, useState } from "react";
 import AnimatedLetters from "../AnimatedLetters";
 import Loader from "react-loaders";
