@@ -1,0 +1,196 @@
+.project-card {
+    background-color: #2f4550;
+    border-radius: 15px;
+    padding: 16px;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.4);
+    transition: transform 0.2s ease;
+    text-align: left;
+    cursor: pointer;
+
+    &:hover {
+        transform: translateY(-5px);
+    }
+
+    .project-image {
+        width: 100%;
+        border-radius: 8px;
+        margin-bottom: 10px;
+    }
+
+    h3 {
+        font-size: 1.5rem;
+        margin: 2px 0;
+        
+    }
+
+    p {
+        font-size: 0.95rem;
+        font-weight: 500;
+        margin-bottom: 10px;
+    }
+
+    .tech-stack {
+        margin-bottom: 10px;
+
+        .tech {
+            display: inline-block;
+            background: #e0e0e0;
+            color: #fff;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            margin-right: 5px;
+        }
+    }
+
+    .project-links {
+        margin-top: 10px;
+
+        a {
+            color: #e0e0e0;
+            text-decoration: none;
+            margin-right: 15px;
+            font-weight: bold;
+
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    .learn-more-button {
+        background-color: #586f7c;
+        color: #e0e0e0;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+
+        &:hover {
+            background-color: #f4f4f9;
+            color: #000;
+        }
+    }
+}
+
+.project-modal-overlay {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.project-modal {
+    background: #2f4550;
+    padding: 20px;
+    width: 80%;
+    max-width: 600px;
+    border-radius: 15px;
+    position: relative;
+    outline: none;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.8);
+    opacity: 0; /* Start hidden */
+    transform: scale(0.95); /* Start slightly scaled down */
+    animation: fadeIn 0.5s forwards;
+
+    &.closing {
+        animation: fadeOut 0.5s forwards;
+    }
+    
+    h2 {
+        margin-top: 0;
+        font-size: 18px;
+        font-style: normal;
+        font-weight: 100px;
+        letter-spacing: 3px;
+        font-family: sans-serif;
+        animation: fadeIn 1s 0.5s backwards;
+    }
+
+    .tech-stack {
+        margin: 10px 0;
+
+        .tech {
+            display: inline-block;
+            background: #586f7c;
+            color: #e0e0e0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            font-size: 0.95rem;
+            font-weight: 1000;
+            margin-right: 5px;
+
+            &:hover {
+                animation: bounce 1s ease, glow 1s ease infinite;
+            }
+        }
+    }
+
+    .project-links a {
+        color: #e0e0e0;
+        display: inline-block;
+        margin-right: 10px;
+        text-decoration: none;
+
+        &:hover {
+            text-decoration: underline;
+        }
+    }
+
+    .close-modal-button {
+        background-color: #586f7c;
+        color: #e0e0e0;
+        border: none;
+        padding: 8px 16px;
+        border-radius: 15px;
+        cursor: pointer;
+        transition: background-color 0.3s;
+        margin-top: 20px;
+
+        &:hover {
+            color: #000;
+            background-color: #f4f4f9;
+        }
+    }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+    40% { transform: translateY(-5px); }
+    60% { transform: translateY(-3px); }
+}
+
+@keyframes glow {
+    0% { box-shadow: 0 0 5px #ffffff; }
+    50% { box-shadow: 0 0 20px #ffffff; }
+    100% { box-shadow: 0 0 5px #ffffff; }
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: scale(0.95); /* Optional: adds a slight scaling effect */
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+        transform: scale(1);
+    }
+    to {
+        opacity: 0;
+        transform: scale(0.95);
+    }
+}
+  
